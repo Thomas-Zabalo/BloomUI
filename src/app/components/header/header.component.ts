@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {RouterLink} from '@angular/router';
 
 @Component({
@@ -8,5 +8,5 @@ import {RouterLink} from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  title = "My first angular App";
+  @Input() title!: string;
 }

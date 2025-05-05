@@ -1,3 +1,15 @@
-main{
-  padding: 1rem;
+section {
+  display: flex;
+
+  aside {
+    width: 20%;
+    padding-inline-end: 0.5rem;
+    border-inline-end: 1px solid #dddddd;
+  }
+
+  main {
+    padding-inline-start: 2%;
+    width: 80%;
+  }
+
 }

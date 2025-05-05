@@ -1,3 +1,36 @@
-<app-greeting [message]="HomeMessage()" />
-<app-counter/>
-<input type="text" placeholder="Type something..." (keyup)="KeyUpHandler($event)">
+<div class="content">
+  <section>
+    <h1>Angular Handbook</h1>
+    <p class="subtitle">Your personal guide to components, services, architecture, and more.</p>
+  </section>
+  <section>
+    <h2>🚀 Quick Start</h2>
+    <ul>
+      <li><code>ng new project-name</code> – Create a new Angular project</li>
+      <li><code>ng generate component name</code> – Generate a component</li>
+      <li><code>ng serve</code> – Start dev server</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>📦 Components</h2>
+    <p>Use components to encapsulate UI logic. Remember:</p>
+    <ul>
+      <li>Inputs/Outputs for communication</li>
+      <li>Use `OnPush` when possible</li>
+      <li>Split presentational and container components</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>📁 Project Structure</h2>
+    <pre><code>
+src/
+├── app/
+│   ├── core/
+│   ├── shared/
+│   ├── features/
+│   └── app.module.ts
+    </code></pre>
+  </section>
+</div>
