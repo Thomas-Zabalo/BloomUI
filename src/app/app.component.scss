@@ -5,10 +5,18 @@ section {
     width: 20%;
     padding-inline-end: 0.5rem;
     border-inline-end: 1px solid #dddddd;
+    height: 100dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 8px;
+
+    .blur{
+      background-color: lightgray;
+      width: 100%;
+    }
   }
 
   main {
-    padding-inline-start: 2%;
     width: 80%;
   }
 

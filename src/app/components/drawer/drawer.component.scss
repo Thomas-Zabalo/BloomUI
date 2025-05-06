@@ -14,13 +14,24 @@
     flex: 1;
     height: 1rem;
     background-image: repeating-linear-gradient(
-      -45deg,
-      #dddddd 0px,
-      #f8f8f8 2px,
-      #fff 2px,
-      #fff 6px
+        -45deg,
+        #dddddd 0px,
+        #f8f8f8 2px,
+        #fff 2px,
+        #fff 6px
     );
     background-size: auto;
+  }
+}
+
+.component {
+  &__items {
+    margin-inline-start: 1rem;
+  }
+
+  &__title {
+    color: grey;
+    cursor: default;
   }
 }
 
@@ -30,12 +41,13 @@ ul {
   display: flex;
   flex-direction: column;
   padding-inline: 2rem;
-  gap: 0.725rem;
+
 
   li ul {
     position: relative;
     border-left: 2px solid #dddddd;
     padding: 0;
+    gap: 0.725rem;
 
     li {
       display: inline-block;
@@ -43,21 +55,6 @@ ul {
       position: relative;
       cursor: pointer;
       padding-left: 0.5rem;
-
-      &:hover {
-        color: #777777;
-      }
-
-      &:hover::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -1.6px;
-        height: 100%;
-        width: 2px;
-        background-color: #9a9a9a;
-        z-index: 1;
-      }
     }
   }
 }
