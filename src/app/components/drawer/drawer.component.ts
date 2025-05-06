@@ -7,7 +7,7 @@ import {RouterLink} from '@angular/router';
     RouterLink
   ],
   templateUrl: './drawer.component.html',
-  styleUrl: './drawer.component.css'
+  styleUrl: './drawer.component.scss'
 })
 export class DrawerComponent {
 

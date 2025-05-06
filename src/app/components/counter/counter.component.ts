@@ -4,7 +4,7 @@ import {Component, signal} from '@angular/core';
   selector: 'app-counter',
   imports: [],
   templateUrl: './counter.component.html',
-  styleUrl: './counter.component.css'
+  styleUrl: './counter.component.scss'
 })
 export class CounterComponent {
   counterValue = signal(0);

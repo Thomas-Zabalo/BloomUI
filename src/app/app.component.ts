@@ -7,17 +7,19 @@ import {DrawerComponent} from './components/drawer/drawer.component';
   selector: 'app-root',
   imports: [RouterOutlet, HeaderComponent, DrawerComponent],
   template: `
-    <app-header [title]="title"/>
+
     <section>
       <aside>
         <app-drawer/>
+        <div class="blur"></div>
       </aside>
       <main>
+        <app-header [title]="title"/>
         <router-outlet/>
       </main>
     </section>
   `,
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'Angular Handbook';

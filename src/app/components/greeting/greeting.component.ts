@@ -4,7 +4,7 @@ import {Component, input} from '@angular/core';
   selector: 'app-greeting',
   imports: [],
   templateUrl: './greeting.component.html',
-  styleUrl: './greeting.component.css'
+  styleUrl: './greeting.component.scss'
 })
 export class GreetingComponent {
   message = input('Hello !')

@@ -1,0 +1,105 @@
+<h1>📚 Créer un composant Angular avec <code>signal()</code></h1>
+
+<hr>
+
+<h2>🛠️ 1. Génération via Angular CLI</h2>
+<pre><code>ng generate component nom-du-composant
+# ou en raccourci
+ng g c nom-du-composant</code></pre>
+
+<p>Cette commande crée un dossier <code>nom-du-composant</code> contenant :</p>
+<ul>
+  <li><code>nom-du-composant.component.ts</code> → logique</li>
+  <li><code>nom-du-composant.component.html</code> → template</li>
+  <li><code>nom-du-composant.component.scss</code> → styles</li>
+  <li><code>nom-du-composant.component.spec.ts</code> → tests</li>
+</ul>
+
+<hr>
+
+<h2>📦 2. Créer un service avec <code>signal()</code></h2>
+<pre><code>import &#123; Injectable, signal &#125; from '&#64;angular/core';
+
+  &#64;Injectable(&#123; providedIn: 'root' &#125;)
+  export class TitreService &#123;
+  private titreSignal = signal&lt;string&gt;('Titre initial');
+
+  get titre() &#123;
+    return this.titreSignal.asReadonly();
+  &#125;
+
+  changerTitre(nouveauTitre: string) &#123;
+    this.titreSignal.set(nouveauTitre);
+  &#125;
+&#125;
+</code></pre>
+
+<hr>
+
+<h2>👨‍👩‍👧 3. Composant parent</h2>
+<pre><code>import &#123; Component &#125; from '&#64;angular/core';
+import &#123; TitreService &#125; from './titre.service';
+
+  &#64;Component(&#123;
+    selector: 'app-root',
+    template: `
+    &lt;button (click)="changerTitre()"&gt;Changer le titre&lt;/button&gt;
+    &lt;app-enfant&gt;&lt;/app-enfant&gt;
+  `
+    &#125;)
+  export class AppComponent &#123;
+  constructor(private titreService: TitreService) &#123;&#125;
+
+  changerTitre() &#123;
+    this.titreService.changerTitre('Titre mis à jour !');
+  &#125;
+&#125;
+</code></pre>
+
+<hr>
+
+<h2>👶 4. Composant enfant (lecture via <code>signal</code>)</h2>
+<pre><code>import &#123; Component, inject &#125; from '&#64;angular/core';
+import &#123; TitreService &#125; from '../titre.service';
+
+  &#64;Component(&#123;
+    selector: 'app-enfant',
+    template: `
+    &lt;h2&gt;&#123;&#123; titre() &#125;&#125;&lt;/h2&gt;
+  `
+    &#125;)
+  export class EnfantComponent &#123;
+  private titreService = inject(TitreService);
+  titre = this.titreService.titre;
+&#125;
+</code></pre>
+
+<hr>
+
+<h2>📋 Résumé des éléments clés</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Élément</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><code>&#64;Component</code></td>
+    <td>Décorateur pour déclarer un composant Angular</td>
+  </tr>
+  <tr>
+    <td><code>selector</code></td>
+    <td>Nom personnalisé de la balise HTML</td>
+  </tr>
+  <tr>
+    <td><code>signal()</code></td>
+    <td>Créer un état réactif (depuis Angular 16+)</td>
+  </tr>
+  <tr>
+    <td><code>inject()</code></td>
+    <td>Nouvelle méthode d'injection de dépendances</td>
+  </tr>
+  </tbody>
+</table>
