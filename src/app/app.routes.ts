@@ -11,45 +11,50 @@ export const routes: Routes = [
   {
     path: 'likes',
     loadComponent: () => {
-      return import ('./pages/likes/likes.component').then((m) => m.LikesComponent)
+      return import ('./pages/core/likes/likes.component').then((m) => m.LikesComponent)
     }
   },
   {
-    path: 'components',
+    path: 'core/components',
     loadComponent: () => {
-      return import ('./pages/components/components.component').then((m) => m.ComponentsComponent)
+      return import ('./pages/core/components/components.component').then((m) => m.ComponentsComponent)
     }
   },
   {
-    path: 'data-binding',
+    path: 'core/data-binding',
     loadComponent: () => {
-      return import ('./pages/data-binding/data-binding.component').then((m) => m.DataBindingComponent)
+      return import ('./pages/core/data-binding/data-binding.component').then((m) => m.DataBindingComponent)
     }
   },
   {
-    path: 'routing',
+    path: 'core/routing',
     loadComponent: () => {
-      return import ('./pages/routing/routing.component').then((m) => m.RoutingComponent)
+      return import ('./pages/core/routing/routing.component').then((m) => m.RoutingComponent)
     }
   }, {
-    path: 'services',
+    path: 'core/services',
     loadComponent: () => {
-      return import ('./pages/services/services.component').then((m) => m.ServicesComponent)
+      return import ('./pages/core/services/services.component').then((m) => m.ServicesComponent)
     }
   }, {
-    path: 'https-request',
+    path: 'core/https-request',
     loadComponent: () => {
-      return import ('./pages/https-request/https-request.component').then((m) => m.HttpsRequestComponent)
+      return import ('./pages/core/https-request/https-request.component').then((m) => m.HttpsRequestComponent)
     }
   }, {
-    path: 'directives',
+    path: 'core/directives',
     loadComponent: () => {
-      return import ('./pages/directives/directives.component').then((m) => m.DirectivesComponent)
+      return import ('./pages/core/directives/directives.component').then((m) => m.DirectivesComponent)
     }
   }, {
-    path: 'pipes',
+    path: 'core/pipes',
     loadComponent: () => {
-      return import ('./pages/pipes/pipes.component').then((m) => m.PipesComponent)
+      return import ('./pages/core/pipes/pipes.component').then((m) => m.PipesComponent)
+    }
+  },{
+    path: 'components/button',
+    loadComponent: () => {
+      return import ('./pages/components/button/button.component').then((m) => m.ButtonComponent)
     }
   },
   {

@@ -1,0 +1,46 @@
+<section>
+  <h2>Boutons</h2>
+  <p>Les boutons permettent à l'utilisateur d'effectuer des actions ou de faire des choix, comme soumettre un
+    formulaire, changer d'état, ou naviguer entre différentes sections.</p>
+
+  <div>
+    @for (group of buttonGroups; track trackByLabel) {
+      <div>
+        <h3>{{ group.label }}</h3>
+
+        <div class="tab-buttons">
+          <button
+            [class.active]="getActiveTab(group.label) === 'preview'"
+            (click)="setActiveTab(group.label, 'preview')"
+          >Rendu</button>
+          <button
+            [class.active]="getActiveTab(group.label) === 'html'"
+            (click)="setActiveTab(group.label, 'html')"
+          >HTML</button>
+          <button
+            [class.active]="getActiveTab(group.label) === 'scss'"
+            (click)="setActiveTab(group.label, 'scss')"
+          >SCSS</button>
+        </div>
+
+        <div class="show">
+          @if (getActiveTab(group.label) === "preview") {
+            @for (variant of group.variants; track variant) {
+              <button class="{{ group.prefix !== 'btn' ? 'btn ' + group.prefix + variant : 'btn' }}">
+                {{ variant.charAt(0).toUpperCase() + variant.slice(1) }}
+              </button>
+            }
+          }
+
+          @if (getActiveTab(group.label) === "html") {
+            <pre class="tab-content"><code>{{ group.html }}</code></pre>
+          }
+
+          @if (getActiveTab(group.label) === "scss") {
+            <pre class="tab-content"><code>{{ group.scss }}</code></pre>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</section>

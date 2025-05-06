@@ -1,23 +1,24 @@
 import {Component} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {HeaderComponent} from './components/header/header.component';
 import {DrawerComponent} from './components/drawer/drawer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, DrawerComponent],
+  imports: [RouterOutlet, DrawerComponent],
   template: `
 
-    <section>
+    <div class="layout">
       <aside>
         <app-drawer/>
         <div class="blur"></div>
       </aside>
-      <main>
-        <app-header [title]="title"/>
-        <router-outlet/>
-      </main>
-    </section>
+      <section>
+        <main>
+          <router-outlet/>
+        </main>
+      </section>
+    </div>
+
   `,
   styleUrl: './app.component.scss'
 })

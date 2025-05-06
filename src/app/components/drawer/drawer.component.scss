@@ -24,9 +24,37 @@
   }
 }
 
+.core {
+  &__items {
+    border-radius: 2px;
+    padding-block: 0.5rem;
+    margin-inline-start: 0.5rem;
+    padding-inline: 1rem !important;
+
+    &:hover {
+      background: #f6f1f3;
+      transition: 200ms ease-in-out;
+
+    }
+  }
+}
+
 .component {
   &__items {
     margin-inline-start: 1rem;
+
+    li {
+      border-radius: 2px;
+      padding-block: 0.5rem;
+      margin-inline-start: 0.5rem;
+      padding-inline: 1rem !important;
+
+
+      &:hover {
+        background: #f6f1f3;
+        transition: 200ms ease-in-out;
+      }
+    }
   }
 
   &__title {
@@ -47,7 +75,7 @@ ul {
     position: relative;
     border-left: 2px solid #dddddd;
     padding: 0;
-    gap: 0.725rem;
+    gap: 0.5rem;
 
     li {
       display: inline-block;
