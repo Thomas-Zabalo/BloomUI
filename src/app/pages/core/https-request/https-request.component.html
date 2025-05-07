@@ -1,1 +1,99 @@
-<p>https-request works!</p>
+<h1>Comprendre les Requêtes HTTP avec Angular</h1>
+
+<p>
+  Vous avez probablement vu, sur certains sites comme Netflix, une grande quantité de données :
+  films, séries, dessins animés, etc.
+  Toutes ces informations proviennent d’un <strong>serveur</strong> qui stocke ces données,
+  et les transmet via des <strong>requêtes HTTP</strong>.
+</p>
+
+<p>
+  Dans la majorité des applications front-end, on utilise une <strong>API</strong>
+  pour communiquer avec le serveur, en s’appuyant sur le protocole HTTP.
+</p>
+
+<h2>HTTP avec Angular</h2>
+
+<p>
+  En JavaScript classique, on utilise <code>fetch()</code> pour faire des requêtes.
+  Mais avec Angular, on dispose d’un service dédié :
+  <code>HttpClient</code> provenant de <code>&#64;angular/common/http</code>.
+</p>
+
+<h3>Étape 1 : Ajouter HttpClient à la configuration</h3>
+
+<pre>
+  <code>
+export const appConfig: ApplicationConfig = &#123;
+  providers: [
+    provideHttpClient(),
+  ]
+&#125; ;
+</code>
+</pre>
+
+<h3>Étape 2 : Créer un service pour gérer les requêtes</h3>
+
+<pre>
+  <code>
+ng generate service services/config
+</code>
+</pre>
+
+<h3>Étape 3 : Utiliser HttpClient dans le service</h3>
+
+<pre>
+  <code>
+import &#123; inject, Injectable  &#125; from '&#64;angular/core';
+import &#123; HttpClient  &#125; from '&#64;angular/common/http';
+
+  &#64;Injectable(&#123;
+    providedIn: 'root',
+  &#125;)
+  export class ConfigService &#123;
+  private http = inject(HttpClient);
+
+  getConfig() &#123;
+    return this.http.get('https://api.exemple.com/config');
+  &#125;
+&#125;
+</code>
+</pre>
+
+<h2>Les méthodes HTTP (CRUD)</h2>
+
+<p>Chaque méthode correspond à une opération :</p>
+
+<table>
+  <thead>
+  <tr>
+    <th>Méthode</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>GET</td>
+    <td>Lire (Read)</td>
+  </tr>
+  <tr>
+    <td>POST</td>
+    <td>Créer (Create)</td>
+  </tr>
+  <tr>
+    <td>PUT</td>
+    <td>Modifier (Update)</td>
+  </tr>
+  <tr>
+    <td>DELETE</td>
+    <td>Supprimer (Delete)</td>
+  </tr>
+  </tbody>
+</table>
+
+<p>
+  Ces méthodes retournent des <strong>Observables RxJS</strong>, ce qui permet d’observer les réponses du serveur.
+  Il est donc important de s’abonner à ces Observables avec <code>.subscribe()</code>.
+</p>
+
+<p>👉 Pour en savoir plus : <a href="https://angular.io/guide/http" target="_blank">Documentation Angular - HTTP</a></p>

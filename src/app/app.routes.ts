@@ -4,63 +4,80 @@ export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    loadComponent: () => {
-      return import ('./pages/home/home.component').then((m) => m.HomeComponent)
+    loadComponent: async () => {
+      const m = await import('./pages/home/home.component');
+      return m.HomeComponent;
     },
   },
   {
-    path: 'likes',
-    loadComponent: () => {
-      return import ('./pages/core/likes/likes.component').then((m) => m.LikesComponent)
-    }
-  },
-  {
     path: 'core/components',
-    loadComponent: () => {
-      return import ('./pages/core/components/components.component').then((m) => m.ComponentsComponent)
+    loadComponent: async () => {
+      const m = await import('./pages/core/components/components.component');
+      return m.ComponentsComponent;
     }
   },
   {
     path: 'core/data-binding',
-    loadComponent: () => {
-      return import ('./pages/core/data-binding/data-binding.component').then((m) => m.DataBindingComponent)
+    loadComponent: async () => {
+      const m = await import('./pages/core/data-binding/data-binding.component');
+      return m.DataBindingComponent;
     }
   },
   {
     path: 'core/routing',
-    loadComponent: () => {
-      return import ('./pages/core/routing/routing.component').then((m) => m.RoutingComponent)
+    loadComponent: async () => {
+      const m = await import('./pages/core/routing/routing.component');
+      return m.RoutingComponent;
     }
   }, {
     path: 'core/services',
-    loadComponent: () => {
-      return import ('./pages/core/services/services.component').then((m) => m.ServicesComponent)
+    loadComponent: async () => {
+      const m = await import('./pages/core/services/services.component');
+      return m.ServicesComponent;
     }
   }, {
     path: 'core/https-request',
-    loadComponent: () => {
-      return import ('./pages/core/https-request/https-request.component').then((m) => m.HttpsRequestComponent)
+    loadComponent: async () => {
+      const m = await import('./pages/core/https-request/https-request.component');
+      return m.HttpsRequestComponent;
     }
   }, {
     path: 'core/directives',
-    loadComponent: () => {
-      return import ('./pages/core/directives/directives.component').then((m) => m.DirectivesComponent)
+    loadComponent: async () => {
+      const m = await import('./pages/core/directives/directives.component');
+      return m.DirectivesComponent;
     }
   }, {
     path: 'core/pipes',
-    loadComponent: () => {
-      return import ('./pages/core/pipes/pipes.component').then((m) => m.PipesComponent)
+    loadComponent: async () => {
+      const m = await import('./pages/core/pipes/pipes.component');
+      return m.PipesComponent;
     }
-  },{
+  }, {
     path: 'components/button',
-    loadComponent: () => {
-      return import ('./pages/components/button/button.component').then((m) => m.ButtonComponent)
+    loadComponent: async () => {
+      const m = await import('./pages/components/button/button.component');
+      return m.ButtonComponent;
+    }
+  }, {
+    path: 'components/dropdown',
+    loadComponent: async () => {
+      const m = await import('./pages/components/dropdown/dropdown.component');
+      return m.DropdownComponent;
     }
   },
   {
-    path: 'todos',
-    loadComponent: () => {
-      return import ('./pages/todos/todos.component').then((m) => m.TodosComponent)
+    path: 'likes',
+    loadComponent: async () => {
+      const m = await import('./pages/core/likes/likes.component');
+      return m.LikesComponent;
+    }
+  },
+  {
+    path: 'dashboard',
+    loadComponent: async () => {
+      const m = await import('./pages/dashboard/dashboard.component');
+      return m.DashboardComponent;
     }
   },
 ];
