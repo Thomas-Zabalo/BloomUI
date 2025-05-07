@@ -1,6 +1,6 @@
 # 🌸 BloomUI – Application Angular
 
-Une application Angular développée avec Angular CLI, mettant en œuvre des composants modernes et une esthétique douce et élégante inspirée du thème floral **BloomUI**.
+Une application Angular développée avec Angular CLI, mettant en œuvre des composants modernes et une esthétique douce et élégante.
 
 ![Angular](https://img.shields.io/badge/Angular-v19.2.10-red?logo=angular)  
 ![License](https://img.shields.io/badge/license-MIT-blue)
