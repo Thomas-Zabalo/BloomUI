@@ -10,7 +10,7 @@ export class TaskService {
   constructor() {
   }
 
-  ngOnInit() {
+  getTasks() {
     return this.tasks;
   }
 
