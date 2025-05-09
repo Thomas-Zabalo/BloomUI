@@ -1,15 +1,19 @@
 import {Component} from '@angular/core';
 import {ButtonGroup, buttonGroups} from '../../../data/button';
+import {MarkdownComponent} from 'ngx-markdown';
+
 
 @Component({
   selector: 'app-button',
-  imports: [],
+  imports: [
+    MarkdownComponent
+  ],
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss'
 })
 export class ButtonComponent {
   buttonGroups: ButtonGroup[] = buttonGroups;
-  // stocke l'onglet actif pour chaque groupe
+
   activeTabs: { [label: string]: string } = {};
 
   setActiveTab(label: string, tab: string) {

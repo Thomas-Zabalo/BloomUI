@@ -73,11 +73,4 @@ export const routes: Routes = [
       return m.LikesComponent;
     }
   },
-  {
-    path: 'dashboard',
-    loadComponent: async () => {
-      const m = await import('./pages/dashboard/dashboard.component');
-      return m.DashboardComponent;
-    }
-  },
 ];
