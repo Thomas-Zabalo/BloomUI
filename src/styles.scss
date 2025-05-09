@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -9,34 +10,135 @@ html, body {
   outline: none;
 }
 
+.btn {
+  border-radius: 4px;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  border: 0.2px solid #e5e5e5;
+  background: #f6f1f3;
+
+  &:hover {
+    cursor: pointer;
+    background: #dddddd;
+  }
+}
+
 .table-container {
   max-height: 400px;
   width: 100%;
   overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  background-color: #fff;
 }
 
 table {
   width: 100%;
-  border-spacing: 1rem;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95rem;
 }
 
 thead th {
-  text-align: start;
-}
+  position: sticky;
+  top: 0;
+  background: #f0f4f8;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
 
-.wrapper {
-  background-color: rgba(16, 185, 129, 0.1);
-  border: 1px solid #10b981;
-  padding-inline: 1rem;
-  padding-block: 0.2rem;
-  border-radius: 12px;
+  &:first-child {
+    border-top-left-radius: 12px;
+  }
 
-  code {
-    color: #10b981;
+  &:last-child {
+    border-top-right-radius: 12px;
   }
 }
 
+tbody tr {
+  transition: background-color 0.2s ease;
+}
 
+tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+tbody td {
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid #f3f4f6;
+  color: #4b5563;
+}
+
+.wrapper {
+  background-color: rgba(16, 185, 129, 0.08);
+  padding-inline: 1rem;
+  padding-block: 0.25rem;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.wrapper code {
+  color: #059669;
+  font-weight: 500;
+}
+
+.item {
+  margin-block: 5rem;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.tab-buttons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    background: rgb(#ccc, 0.2);
+  }
+}
+
+.tab-buttons button.active {
+  background: rgb(#ccc, 0.3);
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  .preview {
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  margin-block: 1rem;
+  padding-block: 5rem;
+  background-image: repeating-linear-gradient(
+      -45deg,
+      #f4f4f4 0px,
+      #f8f8f8 2px,
+      #fff 2px,
+      #fff 6px
+  );
+  background-size: 200%;
+  border-radius: 4px;
+}
+
+
+/* Code blocks */
 pre {
   background-image: repeating-linear-gradient(
       -45deg,

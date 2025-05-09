@@ -1,12 +1,15 @@
 import {Component} from '@angular/core';
 import {ButtonGroup, buttonGroups} from '../../../data/button';
 import {MarkdownComponent} from 'ngx-markdown';
+import {NgForOf, NgIf} from '@angular/common';
 
 
 @Component({
   selector: 'app-button',
   imports: [
-    MarkdownComponent
+    MarkdownComponent,
+    NgForOf,
+    NgIf
   ],
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss'
@@ -28,10 +31,7 @@ export class ButtonComponent {
     return group.label;
   }
 
-  copyToClipboard(code: string) {
-    navigator.clipboard.writeText(code).then(() => {
-      alert('Code copié !');
-    });
+  trackByVariant(index: number, variant: string): string {
+    return variant;
   }
-
 }

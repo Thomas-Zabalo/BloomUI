@@ -1,8 +1,8 @@
-## Boutons
+## DropDown
 
 //TODO faire une description pour ce composant
 
-## Liste des classes de boutons
+## Liste des classes de DropDown
 
 <div class="table-container">
 

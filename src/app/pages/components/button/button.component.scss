@@ -6,51 +6,6 @@ $success: #10b981;
 $warning: #f59e0b;
 $error: #ef4444;
 
-.show {
-  gap: 10px;
-  display: flex;
-  justify-content: center;
-  margin-block: 1rem;
-  padding-block: 5rem;
-  background-image: repeating-linear-gradient(
-      -45deg,
-      #f4f4f4 0px,
-      #f8f8f8 2px,
-      #fff 2px,
-      #fff 6px
-  );
-  background-size: 200%;
-  border-radius: 4px;
-}
-
-.tab-buttons {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 1rem;
-}
-
-.tab-buttons button {
-  padding: 0.5rem 1rem;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  border-radius: 5px;
-
-  &:hover {
-    background: rgb(#ccc, 0.2);
-  }
-}
-
-.tab-buttons button.active {
-  background: rgb(#ccc, 0.3);
-  font-weight: bold;
-}
-
-.hidden {
-  display: none;
-}
-
-
 .btn {
   border-radius: 4px;
   padding-inline: 1rem;

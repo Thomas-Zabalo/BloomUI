@@ -1,8 +1,24 @@
-<div>
-  <p class="btn">dropdown</p>
-  <ul>
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-  </ul>
-</div>
+<section>
+  <markdown [src]="'docs/dropdown.md'"></markdown>
+
+  <div>
+
+    <div class="item">
+
+      <div class="show">
+        <div id="preview">
+          <div class="dropdown">
+            <button class="btn" (click)="toggleMenu()">Dropdown</button>
+            <ul class="dropdown-menu" *ngIf="isMenuVisible">
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
